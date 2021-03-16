@@ -7,7 +7,7 @@ const getCollection = (collection) => {
   // get the firebase collection and orderby
   let collectionRef = projectFirestore.collection(collection)
     .orderBy('createdAt')
-  // once the collection be changes, invoked
+  // once the collection be changes, method: onSnapshot() invoked
   collectionRef.onSnapshot((snap) => {
     let results = []
     snap.docs.forEach(doc => {
